@@ -4,7 +4,7 @@
     class="VueCarousel-pagination"
     v-bind:class="{ [`VueCarousel-pagination--${paginationPositionModifierName}`]: paginationPositionModifierName }"
   >
-    <div class="VueCarousel-dot-container" role="tablist" :style="`margin-top: ${carousel.paginationPadding * 2}px;`">
+    <div class="VueCarousel-dot-container" role="tablist" :style="`margin-top: ${carousel.paginationPadding}px;`">
       <button
         v-for="(page, index) in paginationCount"
         :key="`${page}_${index}`"
@@ -18,7 +18,7 @@
         v-bind:class="{ 'VueCarousel-dot--active': isCurrentDot(index) }"
         v-on:click="goToPage(index)"
         :style="`
-          margin-${paginationPropertyBasedOnPosition}: ${carousel.paginationPadding * 2}px;
+          margin-${paginationPropertyBasedOnPosition}: ${carousel.paginationPadding}px;
           padding: ${carousel.paginationPadding}px;
           width: ${carousel.paginationSize}px;
           height: ${carousel.paginationSize}px;
