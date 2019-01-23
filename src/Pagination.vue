@@ -2,9 +2,11 @@
   <div
     v-show="carousel.pageCount > 1"
     class="VueCarousel-pagination"
-    v-bind:class="{ [`VueCarousel-pagination--${paginationPositionModifierName}`]: paginationPositionModifierName }"
+    v-bind:class="{
+      [`VueCarousel-pagination--${paginationPositionModifierName}`]: paginationPositionModifierName
+    }"
   >
-    <div class="VueCarousel-dot-container" role="tablist" :style="`margin-top: ${carousel.paginationPadding}px;`">
+    <div class="VueCarousel-dot-container" role="tablist">
       <button
         v-for="(page, index) in paginationCount"
         :key="`${page}_${index}`"
@@ -17,13 +19,21 @@
         :aria-selected="isCurrentDot(index) ? 'true' : 'false'"
         v-bind:class="{ 'VueCarousel-dot--active': isCurrentDot(index) }"
         v-on:click="goToPage(index)"
-        :style="`
-          margin-${paginationPropertyBasedOnPosition}: ${carousel.paginationPadding}px;
+        :style="
+          `
+          margin-${paginationPropertyBasedOnPosition}: ${
+            carousel.paginationPadding
+          }px;
           padding: ${carousel.paginationPadding}px;
           width: ${carousel.paginationSize}px;
           height: ${carousel.paginationSize}px;
-          background-color: ${isCurrentDot(index) ? carousel.paginationActiveColor : carousel.paginationColor};
-        `"
+          background-color: ${
+            isCurrentDot(index)
+              ? carousel.paginationActiveColor
+              : carousel.paginationColor
+          };
+        `
+        "
       ></button>
     </div>
   </div>
@@ -49,8 +59,8 @@ export default {
       return this.carousel && this.carousel.scrollPerPage
         ? this.carousel.pageCount
         : this.carousel.slideCount && this.carousel.currentPerPage
-          ? this.carousel.slideCount - this.carousel.currentPerPage + 1
-          : 0;
+        ? this.carousel.slideCount - this.carousel.currentPerPage + 1
+        : 0;
     }
   },
   methods: {
