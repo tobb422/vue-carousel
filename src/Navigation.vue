@@ -98,6 +98,7 @@ export default {
   padding: 0;
   cursor: pointer;
   outline: none;
+  font-size: 30px;
 }
 
 .VueCarousel-navigation-button:focus {
@@ -107,13 +108,11 @@ export default {
 .VueCarousel-navigation-next {
   right: 0;
   transform: translateY(-50%) translateX(100%);
-  font-family: "system";
 }
 
 .VueCarousel-navigation-prev {
   left: 0;
   transform: translateY(-50%) translateX(-100%);
-  font-family: "system";
 }
 
 .VueCarousel-navigation--disabled {
@@ -126,6 +125,7 @@ export default {
   font-family: system;
   font-style: normal;
   font-size: 30px;
+  color: #292929;
   font-weight: 400;
   src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"),
     local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Symbol"),
