@@ -108,11 +108,15 @@ export default {
 .VueCarousel-navigation-next {
   right: 0;
   transform: translateY(-50%) translateX(100%);
+  font-size: 30px;
+  color: #292929;
 }
 
 .VueCarousel-navigation-prev {
   left: 0;
   transform: translateY(-50%) translateX(-100%);
+  font-size: 30px;
+  color: #292929;
 }
 
 .VueCarousel-navigation--disabled {
